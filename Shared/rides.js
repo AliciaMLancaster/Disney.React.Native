@@ -5,7 +5,6 @@ export const RIDES = [
     ride: 'Pirates of the Carribean',
     park: 'Magic Kingdom',
     rating: 10,
-    featured: true,
     text: 'Boat ride with your favorite pirates',
   },
 
@@ -15,7 +14,6 @@ export const RIDES = [
     ride: 'Haunted Mansion',
     park: 'Magic Kingdom',
     rating: 10,
-    featured: true,
     text:
       "This ride uses many effects that make it realistic.  Yet, it isn't too scary.",
   },

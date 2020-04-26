@@ -4,10 +4,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 // USER IMPORTS
-import Screen2 from './screens/screen2';
+import Rides from './screens/RideScreen';
 import Home from './screens/HomeScreen';
 import Parks from './screens/ParksScreen';
-import ParkDetailScreen from './screens/ParkDetailScreen';
+import ParkDetailsScreen from './screens/ParkDetailScreen';
+import RideDetailsScreen from './screens/RideDetailsScreen';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -33,9 +34,9 @@ function MyTabs() {
         options={{ tabBarLabel: 'Parks' }}
       />
       <Tab.Screen
-        name="Screen 2"
-        component={Screen2}
-        options={{ tabBarLabel: 'Screen 2' }}
+        name="Rides"
+        component={Rides}
+        options={{ tabBarLabel: 'Rides' }}
       />
     </Tab.Navigator>
   );
@@ -47,7 +48,8 @@ function StackNav() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="MyTabs" component={MyTabs} />
-      <Stack.Screen name="ParkDetailScreen" component={ParkDetailScreen} />
+      <Stack.Screen name="ParkDetailsScreen" component={ParkDetailsScreen} />
+      <Stack.Screen name="RideDetailsScreen" component={RideDetailsScreen} />
     </Stack.Navigator>
   );
 }
