@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { connect } from 'react-redux';
 
 class ParkDetailsScreen extends Component {
@@ -8,13 +8,14 @@ class ParkDetailsScreen extends Component {
       containerStyle,
       infoContainerStyle,
       detailHeadingStyle,
-      goBackButtonStyle
+      goBackButtonStyle,
     } = styles;
 
     return (
       <View style={containerStyle}>
         <View style={infoContainerStyle}>
           <Text style={detailHeadingStyle}>Details</Text>
+          <Image source={this.props.selectedPark.image} />
           <Text>Park: {this.props.selectedPark.name}</Text>
           <Text>Description: {this.props.selectedPark.description}</Text>
         </View>
@@ -34,7 +35,7 @@ class ParkDetailsScreen extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    selectedPark: state.selectedPark
+    selectedPark: state.selectedPark,
   };
 };
 
@@ -44,13 +45,13 @@ const styles = StyleSheet.create({
   containerStyle: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   infoContainerStyle: {
     marginBottom: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    width: '80%'
+    width: '80%',
   },
   detailHeadingStyle: { fontSize: 20 },
   goBackButtonStyle: {
@@ -59,6 +60,6 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 5,
     justifyContent: 'center',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 });
