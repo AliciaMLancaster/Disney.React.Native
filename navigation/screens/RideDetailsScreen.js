@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+  ScrollView,
+} from 'react-native';
 import { connect } from 'react-redux';
 
 class RideDetailsScreen extends Component {
@@ -21,6 +28,16 @@ class RideDetailsScreen extends Component {
             source={this.props.selectedPark.rides[0].rideImage}
           />
           <Text>Ride: {this.props.selectedPark.rides[0].rideName}</Text>
+          <Image
+            style={imageFormat}
+            source={this.props.selectedPark.rides[1].rideImage}
+          />
+          <Text>Ride: {this.props.selectedPark.rides[1].rideName}</Text>
+          <Image
+            style={imageFormat}
+            source={this.props.selectedPark.rides[2].rideImage}
+          />
+          <Text>Ride: {this.props.selectedPark.rides[2].rideName}</Text>
         </View>
 
         <TouchableOpacity
@@ -66,8 +83,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   imageFormat: {
-    width: 400,
-    height: 200,
+    width: 350,
+    height: 150,
     marginTop: 10,
     borderWidth: 2,
     borderColor: 'blue',

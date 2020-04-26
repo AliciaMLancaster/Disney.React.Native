@@ -15,7 +15,7 @@ const Tab = createMaterialTopTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Parks"
+      initialRouteName="Home"
       tabBarOptions={{
         activeTintColor: 'blue',
         inactiveTintColor: '#008080',
