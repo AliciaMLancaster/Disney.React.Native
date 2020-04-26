@@ -1,4 +1,4 @@
-export const REVIEWS = [
+export const RIDES = [
   {
     id: 0,
     parkId: 0,
@@ -6,8 +6,7 @@ export const REVIEWS = [
     park: 'Magic Kingdom',
     rating: 10,
     featured: true,
-    text:
-      "Nothing quite matches the feeling of a light stomach when a ride suddenly drops. Likewise, the enjoyment of live entertainment, and a well made setting, can bring one much joy. I was one stuck on this ride for over 20 minutes, right in the middle of two ships dueling. It didn't get old.",
+    text: 'Boat ride with your favorite pirates',
   },
 
   {
