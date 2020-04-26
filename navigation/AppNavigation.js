@@ -1,23 +1,25 @@
+// SYSTEM IMPORTS
 import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+// USER IMPORTS
 import Screen1 from './screens/screen1';
 import Screen2 from './screens/screen2';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Parks from './screens/ParksScreen';
-import Details from './screens/detailscreen';
+import ParkDetailScreen from './screens/ParkDetailScreen';
 
 const Tab = createMaterialTopTabNavigator();
 
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Screen 1"
+      initialRouteName="Parks"
       tabBarOptions={{
         activeTintColor: 'blue',
         inactiveTintColor: '#008080',
         labelStyle: { fontSize: 12 },
-        style: { backgroundColor: 'pink', paddingTop: 20 },
+        style: { backgroundColor: 'pink', paddingTop: 20 }
       }}
     >
       <Tab.Screen
@@ -42,22 +44,20 @@ function MyTabs() {
 const Stack = createStackNavigator();
 
 function StackNav() {
-  const isParkSelected = () => {
-    if (selectedPark) {
-      return <Stack.Screen name="Details" component={Details} />;
-    } else {
-      return <MyTabs />;
-    }
-  };
-  return <Stack.Navigator>{isParkSelected()}</Stack.Navigator>;
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="MyTabs" component={MyTabs} />
+      <Stack.Screen name="ParkDetailScreen" component={ParkDetailScreen} />
+    </Stack.Navigator>
+  );
 }
 
-const AppNavigation = () => {
+function AppNavigation() {
   return (
     <NavigationContainer>
       <StackNav />
     </NavigationContainer>
   );
-};
+}
 
 export default AppNavigation;
