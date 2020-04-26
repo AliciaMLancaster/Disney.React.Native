@@ -4,8 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 // USER IMPORTS
-import Screen1 from './screens/screen1';
 import Screen2 from './screens/screen2';
+import Home from './screens/HomeScreen';
 import Parks from './screens/ParksScreen';
 import ParkDetailScreen from './screens/ParkDetailScreen';
 
@@ -19,13 +19,13 @@ function MyTabs() {
         activeTintColor: 'blue',
         inactiveTintColor: '#008080',
         labelStyle: { fontSize: 12 },
-        style: { backgroundColor: 'pink', paddingTop: 20 }
+        style: { backgroundColor: 'lightblue', paddingTop: 20 },
       }}
     >
       <Tab.Screen
-        name="Screen 1"
-        component={Screen1}
-        options={{ tabBarLabel: 'Screen 1' }}
+        name="Home"
+        component={Home}
+        options={{ tabBarLabel: 'Home' }}
       />
       <Tab.Screen
         name="Parks"

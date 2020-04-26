@@ -12,7 +12,7 @@ class Parks extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      parks: PARKS
+      parks: PARKS,
     };
 
     this.selectNewPark = this.selectNewPark.bind(this);
@@ -29,7 +29,7 @@ class Parks extends Component {
         <TouchableOpacity onPress={() => this.selectNewPark(item)}>
           <ListItem
             title={item.name}
-            subtitle={item.description}
+            subtitle={item.history}
             leftAvatar={{ source: item.image }}
           />
         </TouchableOpacity>
@@ -49,7 +49,7 @@ class Parks extends Component {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(
     {
-      selectPark
+      selectPark,
     },
     dispatch
   );

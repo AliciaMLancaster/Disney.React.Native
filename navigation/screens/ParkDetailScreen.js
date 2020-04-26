@@ -9,13 +9,14 @@ class ParkDetailsScreen extends Component {
       infoContainerStyle,
       detailHeadingStyle,
       goBackButtonStyle,
+      imageFormat,
     } = styles;
 
     return (
       <View style={containerStyle}>
         <View style={infoContainerStyle}>
-          <Text style={detailHeadingStyle}>Details</Text>
-          <Image source={this.props.selectedPark.image} />
+          <Text style={detailHeadingStyle}>PARK DETAILS</Text>
+          <Image style={imageFormat} source={this.props.selectedPark.image} />
           <Text>Park: {this.props.selectedPark.name}</Text>
           <Text>Description: {this.props.selectedPark.description}</Text>
         </View>
@@ -61,5 +62,13 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  imageFormat: {
+    width: 400,
+    height: 200,
+    marginTop: 10,
+    borderWidth: 2,
+    borderColor: 'blue',
+    borderRadius: 10,
   },
 });
